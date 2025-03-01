@@ -1,17 +1,7 @@
 ## Credits 
 1) forked from `https://github.com/hominoids/sgminer-arm` 
-2) for Android Port i got help from `https://github.com/Pyogenics` 
-3) 
-4)
-5)
-6)
-#### I will mention credit when projects complete, project still under development.
-#### I want help for kernel optimization for Adreno && ARM-Mali GPU 
-#### In this project ALL kernel optimise for AMD 
- Contact Discord `HappY#3730`
-# 
-# Warning
-# This Projects have no warranty, so everyone use your own risk
+2) for Android Port `https://github.com/Pyogenics` 
+
 
 # how to build && install
 
@@ -69,25 +59,3 @@ nano $PREFIX/include/bthread.h
 ```
 #include <pthread.h>
 ```
-
-#### Example:
-
-# compile the thing:
-
-```
-git clone https://github.com/Saikatsaha1996/sgminer-arm
-cd sgminer-arm 
-git submodule init 
-git submodule update 
-autoreconf -fi
-
-CFLAGS="-O3 -Wall -march=armv8-a+simd+crypto+crc -mtune=cortex-a77 -std=gnu99 -fcommon" CPPFLAGS="-O3 -Wall -march=armv8-a+simd+crypto+crc -mtune=cortex-a77 -std=gnu99 -fcommon" LDFLAGS="-L$PREFIX/lib -lbthread -lpthread -lOpenCL -fcommon" ./configure --disable-adl --disable-adl-checks --disable-git-version 
-```
-
-now you can see in your screen `OPENCL FOUND && GPU MINING SUPPORT ENABLED`
-
-now just run `make -j4`
-
-now start mining `./sgminer -k <algo> -o <pool:port> -u <wallet_address> -p <password> -I d`
-
-for more info `./sgminer --help`
